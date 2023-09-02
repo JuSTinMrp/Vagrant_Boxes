@@ -71,6 +71,22 @@ sudo chown cyberrav /home/cyberrav/us3r.png
 sudo rm /home/cyberrav/Flag2.txt
 sudo cp /data/Flag2.txt /home/cyberrav/Flag2.txt
 sudo chmod 400 /home/cyberrav/Flag2.txt
+sudo chmod 400 /home/cyberrav
 sudo chown cyberrav /home/cyberrav/Flag2.txt
+sudo chown cyberrav /home/cyberrav
+
+
+
+# setting up flag_2
+#cp /data/ r00t.txt  /home/justin/
+cp /data/ r00t.txt  /home/justin/get_the_flag/
+sudo chmod 400 /home/justin/ r00t.txt 
+sudo chmod 400 /home/justin
+sudo chown justin /home/justin/ r00t.txt 
+sudo chown justin /home/justin
+
+# generating root flag
+echo "THM{M45T3R_3V3RYTH1NG}" > $(printf "\u2000r00t.txt\u2000")
+
 
 
