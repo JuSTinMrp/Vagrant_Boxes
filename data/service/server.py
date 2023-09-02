@@ -30,7 +30,7 @@ class MagicAPIHandler(http.server.BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header('Content-Type', 'text/html')
                 self.end_headers()
-                with open('/home/justin/box/Jus_Kill/data/service/index.html', 'rb') as html_file:
+                with open('test.html', 'rb') as html_file:
                     self.wfile.write(html_file.read())
             else:
                 self.send_response(404)
