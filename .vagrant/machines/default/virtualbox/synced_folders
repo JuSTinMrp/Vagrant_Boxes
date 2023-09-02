@@ -1,0 +1,1 @@
+{"virtualbox":{"/data":{"guestpath":"/data","hostpath":"/home/justin/box/Jus_Kill/data","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/justin/box/Jus_Kill","disabled":false,"__vagrantfile":true}}}

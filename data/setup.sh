@@ -19,6 +19,7 @@ sudo apt install xclip -y
 sudo apt install python -y
 sudo apt install python3-pip -y
 sudo apt-get install python3-pip python-dev -y
+sudo pip install --upgrade pip
 sudo pip3 install pycrypto
 sudo pip3 install pycryptodome
 sudo pip3 install cryptography
@@ -44,13 +45,32 @@ sudo mkdir -p /home/justin
 sudo chown justin:justin /home/justin
 sudo bash -c "echo 'justin:h33l_up_th1ng577' | chpasswd"
 
+#change passwd for vagrant user
+sudo bash -c "echo 'vagrant:things_you_will_never_know' | chpasswd"
+
+
+
 
 #removing unwanted user
 
 sudo deluser ubuntu
-rm -rf /home/ubuntu
+sudo rm -rf /home/ubuntu
 
+sudo cp /data/new_sshd_config /etc/ssh/sshd_config
 sudo systemctl restart ssh
+#sudo service ssh restart
 
-cp /data/us3r.png /home/cyberrav/us3r.png
+# setting up flag_1
+sudo rm /home/cyberrav/us3r.png
+sudo cp /data/us3r.png /home/cyberrav/us3r.png
+sudo chmod 400 /home/cyberrav/us3r.png
+sudo chown cyberrav /home/cyberrav/us3r.png
+
+
+# setting up flag_2 clue
+sudo rm /home/cyberrav/Flag2.txt
+sudo cp /data/Flag2.txt /home/cyberrav/Flag2.txt
+sudo chmod 400 /home/cyberrav/Flag2.txt
+sudo chown cyberrav /home/cyberrav/Flag2.txt
+
 
