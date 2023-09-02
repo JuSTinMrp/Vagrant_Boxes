@@ -1,0 +1,38 @@
+JUS_KILL 192.168.56.45
+
+
+Flags:
+    THM{C4LL_M3_JU5T1N}     => cyberrav's flag
+    THM{M45T3R_3V3RYTH1NG}  => root's flag
+
+
+Website is hosting in random high port
+    which has robots.txt file and it discloses the information that there is directory/page named "nothing here"
+    view the source page of the "nothing here" page to get the super secret api key
+    API key should reveal the username and password for ssh and also username of root and password is flicked
+
+# vagrant password => "things_you_will_never_know"
+1st one -> cyberrav,  g0t_my_a1ms
+2nd one -> justin, find_a_new_one!! (h33l_up_th1ng577)
+
+
+ssh into cyberrav without any keys(pub & pri)
+    only username and password
+    after gets logged in (user is not a root user(privledge))
+    only one image -> exiftool to see the comment to get the FLAG_1
+
+    another file with a encrypted text and secret key(triple des)
+    decrypt for the password for justin user
+    after gets logged into that acc, unicode encoded text file with FLAG_2
+
+
+    
+
+
+
+##ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeljxttPdNwCxhKe+5PqZT76bLWffYDcO4OIqRFxSMEBFuXmorOMM8uUgta+VNBuTbuE3/BWPJ2E5K6P1HMSbSyUyDNnEpcUYg6/wBNDPKWHOd2EO+fSJ3BwNYaOfOri1KfOnuaxVZ84+HLKeOC5dY0JpBocFDHWyKbesc0FBiuH0SbR9BiRj6I8U4A9Z6pxcNI0QOlJirJboYUuy7/j0qRYN7z2ogTRqZ0YggI3CKwmysHE3x27fYXb15c/nMGdI6KLM1WxMTkxr0hBEcClP23Tq0MgOOmBzaru+Jz2zozCz9kt3qhLH5fEbLeMoJLiHwegioQtFz9hLUMD6dkX1x root@ubuntu-xenial
+ 
+
+link to decrpty triple des
+https://www.devglan.com/online-tools/triple-des-encrypt-decrypt
+
