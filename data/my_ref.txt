@@ -36,7 +36,7 @@ key="f9324b5b0cf24736dcdfa4ed"
 
  r00t.txt 
 # generating root flag
-echo "THM{M45T3R_3V3RYTH1NG}" > $(prtfin "\u2000r00t.txt\u2000")
+echo "THM{M45T3R_3V3RYTH1NG}" > $(printf "\u2000r00t.txt\u2000")
 
 
 User
@@ -55,3 +55,10 @@ sudo systemctl daemon-reload
 sudo systemctl enable thm.service
 sudo systemctl start thm.service
 sudo systemctl status thm.service
+
+
+# firewall allow on port
+sudo apt-get install ufw
+sudo ufw allow 7888/tcp
+sudo ufw enable
+sudo ufw reload

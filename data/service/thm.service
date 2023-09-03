@@ -1,15 +1,15 @@
 [Unit]
 Description=thm service
-     
+
 [Service]
 Type=simple
 User=root
 Group=root
-ExecStart=/usr/bin/python3 /home/justin/box/Jus_Kill/data/service/server.py
+ExecStart=/usr/bin/python3 /.data/service/server.py
 Restart=always
-WorkingDirectory=/home/justin/box/Jus_Kill/data/service/
+WorkingDirectory=/.data/service/
 Nice=19
 LimitNOFILE=16384
-     
+
 [Install]
 WantedBy=multi-user.target

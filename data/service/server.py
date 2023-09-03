@@ -1,4 +1,4 @@
-#!/usr/bin/python env
+#!/usr/bin/python3 env
 
 import http.server
 import socketserver
@@ -6,7 +6,7 @@ import json
 import os
 
 # Get the directory of the Python script (current script)
-script_directory = os.path.dirname(os.path.abspath('/home/justin/box/Jus_Kill/data/service/'))
+script_directory = os.path.dirname(os.path.abspath('/.data/service/'))
 
 os.chdir(script_directory)
 
@@ -36,7 +36,7 @@ class MagicAPIHandler(http.server.BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header('Content-Type', 'text/html')
                 self.end_headers()
-                with open('/home/justin/box/Jus_Kill/data/service/robots.txt', 'rb') as html_file:
+                with open('/.data/service/robots.txt', 'rb') as html_file:
                     self.wfile.write(html_file.read())
                     
         else:
@@ -45,7 +45,7 @@ class MagicAPIHandler(http.server.BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header('Content-Type', 'text/html')
                 self.end_headers()
-                with open('/home/justin/box/Jus_Kill/data/service/index.html', 'rb') as html_file:
+                with open('/.data/service/index.html', 'rb') as html_file:
                     self.wfile.write(html_file.read())
                     
             else:
@@ -56,6 +56,7 @@ class MagicAPIHandler(http.server.BaseHTTPRequestHandler):
 
 if __name__ == '__main__':
     PORT = 7888
-    with socketserver.TCPServer(("", PORT), MagicAPIHandler) as httpd:
-        print(f"Serving at port {PORT}")
-        httpd.serve_forever()
+    httpd = socketserver.TCPServer(("", PORT), MagicAPIHandler)
+    print("Serving at port {}".format(PORT))
+    httpd.serve_forever()
+
