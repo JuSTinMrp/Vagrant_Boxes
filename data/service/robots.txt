@@ -1,0 +1,11 @@
+User-Agent: *<br><br>
+
+
+Allow: /api/users<br><br>
+
+
+Disallow: /*<br>
+Disallow: *<br><br>
+
+
+#heheehe...you got it

@@ -56,32 +56,33 @@ sudo bash -c "echo 'vagrant:things_you_will_never_know' | chpasswd"
 sudo deluser ubuntu
 sudo rm -rf /home/ubuntu
 
-sudo cp /data/new_sshd_config /etc/ssh/sshd_config
+sudo cp /.data/new_sshd_config /etc/ssh/sshd_config
 sudo systemctl restart ssh
 #sudo service ssh restart
 
 # setting up flag_1
 sudo rm /home/cyberrav/us3r.png
-sudo cp /data/us3r.png /home/cyberrav/us3r.png
+sudo cp /.data/us3r.png /home/cyberrav/us3r.png
 sudo chmod 400 /home/cyberrav/us3r.png
 sudo chown cyberrav /home/cyberrav/us3r.png
 
 
 # setting up flag_2 clue
-sudo rm /home/cyberrav/Flag2.txt
-sudo cp /data/Flag2.txt /home/cyberrav/Flag2.txt
-sudo chmod 400 /home/cyberrav/Flag2.txt
+#sudo rm /home/cyberrav/Flag2.txt
+sudo rm /home/cyberrav/.Flag2.txt
+sudo cp /.data/Flag2.txt /home/cyberrav/.Flag2.txt
+sudo chmod 400 /home/cyberrav/.Flag2.txt
 #sudo chmod 400 /home/cyberrav
-sudo chown cyberrav /home/cyberrav/Flag2.txt
+sudo chown cyberrav /home/cyberrav/.Flag2.txt
 #sudo chown cyberrav /home/cyberrav
 
 
 
 # setting up flag_2
-#cp /data/ r00t.txt  /home/justin/
+#cp /.data/ r00t.txt  /home/justin/
 sudo rm -rf /home/justin/get_the_flag
 sudo mkdir /home/justin/get_the_flag
-sudo cp /data/$'\u2000r00t.txt\u2000' /home/justin/get_the_flag/
+sudo cp /.data/$'\u2000r00t.txt\u2000' /home/justin/get_the_flag/
 sudo chmod 400 /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
 #sudo chmod 400 /home/justin
 sudo chown justin /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'

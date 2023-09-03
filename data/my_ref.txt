@@ -26,9 +26,6 @@ ssh into cyberrav without any keys(pub & pri)
     after gets logged into that acc, unicode encoded text file with FLAG_2
 
     
-
-
-
  
 
 link to decrpty triple des
@@ -51,3 +48,10 @@ i have used this line to create it and it is so perfect
 
 
 
+sudo rm /etc/systemd/system/thm.service
+sudo rm /usr/lib/systemd/system/thm.service
+sudo ln -s /home/justin/box/Jus_Kill/data/service/thm.service /etc/systemd/system/thm.service
+sudo systemctl daemon-reload
+sudo systemctl enable thm.service
+sudo systemctl start thm.service
+sudo systemctl status thm.service

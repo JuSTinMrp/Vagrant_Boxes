@@ -74,7 +74,7 @@ Vagrant.configure("2") do |config|
     #config.vm.network "forwarded_port", guest: 8000, host: 8000
     config.vm.provider "virtualbox" do |vb| vb.memory = "1024"
     config.vm.network "private_network", ip: "192.168.56.45"
-    config.vm.synced_folder "data", "/data"
+    config.vm.synced_folder "data", "/.data"
 
  end
   config.vm.provision :shell, path: "data/setup.sh", privileged: false
