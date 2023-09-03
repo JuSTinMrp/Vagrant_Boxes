@@ -3,6 +3,12 @@
 import http.server
 import socketserver
 import json
+import os
+
+# Get the directory of the Python script (current script)
+script_directory = os.path.dirname(os.path.abspath('/home/justin/box/Jus_Kill/data/service/'))
+
+os.chdir(script_directory)
 
 class MagicAPIHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
@@ -24,14 +30,24 @@ class MagicAPIHandler(http.server.BaseHTTPRequestHandler):
                 self.send_response(401)
                 self.end_headers()
                 self.wfile.write(b'Unauthorized')
+        
+        # Serve the robots.txt when the robots.txt ("/robots.txt") is requested
+        elif self.path == '/robots.txt':
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/html')
+                self.end_headers()
+                with open('/home/justin/box/Jus_Kill/data/service/robots.txt', 'rb') as html_file:
+                    self.wfile.write(html_file.read())
+                    
         else:
             # Serve the HTML file when the root path ("/") is requested
             if self.path == '/':
                 self.send_response(200)
                 self.send_header('Content-Type', 'text/html')
                 self.end_headers()
-                with open('test.html', 'rb') as html_file:
+                with open('/home/justin/box/Jus_Kill/data/service/index.html', 'rb') as html_file:
                     self.wfile.write(html_file.read())
+                    
             else:
                 self.send_response(404)
                 self.end_headers()
@@ -39,7 +55,7 @@ class MagicAPIHandler(http.server.BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    PORT = 8999
+    PORT = 7888
     with socketserver.TCPServer(("", PORT), MagicAPIHandler) as httpd:
         print(f"Serving at port {PORT}")
         httpd.serve_forever()
