@@ -1,5 +1,9 @@
-vagrant/*
+.vagrant/*
 
 .vagrant/machines .vagrant/rgloader
 
 ubuntu-xenial-16.04-cloudimg-console.log
+
+/data/id_rsa
+/data/id_rsa.pub
+/data/authorized_keys
