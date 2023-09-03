@@ -93,9 +93,19 @@ sudo chmod 400 /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
 sudo chown justin /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
 #sudo chown justin /home/justin
 
-# setting python script as service
+# removing existing service files
 sudo rm /etc/systemd/system/thm.service
 sudo rm /usr/lib/systemd/system/thm.service
+
+# updating firewall rules
+sudo apt-get install ufw
+sudo ufw allow 22/tcp
+sudo ufw allow 7888/tcp
+sudo ufw enable
+sudo ufw reload
+
+
+# setting python script as service
 
 sudo cp /.data/service/thm.service /etc/systemd/system/thm.service
 sudo systemctl daemon-reload
