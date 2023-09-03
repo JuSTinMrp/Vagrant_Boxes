@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# changing sources file
+#sudo cp /.data/sources.list /etc/apt/
+
 # updating packages
 sudo apt-get update -y
+
 
 # # setting up banner 
 # sudo apt-get install figlet -y && sudo apt install lolcat -y
@@ -16,9 +20,10 @@ sudo systemctl restart ssh
 sudo apt install xclip -y
 
 # installing python
+# sudo apt-get purge python2.7* python3* -y
 sudo apt install python -y
+sudo apt install python3 -y
 sudo apt install python3-pip -y
-sudo apt-get install python3-pip python-dev -y
 sudo pip3 install --upgrade pip
 sudo pip3 install pycrypto
 sudo pip3 install pycryptodome
@@ -88,3 +93,11 @@ sudo chmod 400 /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
 sudo chown justin /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
 #sudo chown justin /home/justin
 
+# setting python script as service
+sudo rm /etc/systemd/system/thm.service
+sudo rm /usr/lib/systemd/system/thm.service
+
+sudo cp /.data/service/thm.service /etc/systemd/system/thm.service
+sudo systemctl daemon-reload
+sudo systemctl enable thm.service
+sudo systemctl start thm.service
