@@ -111,3 +111,8 @@ sudo cp /.data/service/thm.service /etc/systemd/system/thm.service
 sudo systemctl daemon-reload
 sudo systemctl enable thm.service
 sudo systemctl start thm.service
+
+sudo ufw allow 22/tcp
+sudo ufw allow 7888/tcp
+sudo ufw enable
+sudo ufw reload
