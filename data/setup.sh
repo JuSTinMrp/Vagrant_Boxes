@@ -38,7 +38,7 @@ sudo delgroup cyberrav
 
 sudo useradd cyberrav
 sudo mkdir -p /home/cyberrav
-sudo chown cyberrav:cyberrav /home/cyberrav
+sudo chown -R cyberrav:cyberrav /home/cyberrav
 sudo bash -c "echo 'cyberrav:g0t_my_a1ms' | chpasswd"
 
 #another one user (root)
@@ -47,7 +47,7 @@ sudo delgroup justin
 
 sudo useradd justin
 sudo mkdir -p /home/justin
-sudo chown justin:justin /home/justin
+sudo chown -R justin:justin /home/justin
 sudo bash -c "echo 'justin:h33l_up_th1ng577' | chpasswd"
 
 #change passwd for vagrant user
@@ -69,7 +69,7 @@ sudo systemctl restart ssh
 sudo rm /home/cyberrav/us3r.png
 sudo cp /.data/us3r.png /home/cyberrav/us3r.png
 sudo chmod 400 /home/cyberrav/us3r.png
-sudo chown cyberrav /home/cyberrav/us3r.png
+sudo chown cyberrav:cyberrav /home/cyberrav/us3r.png
 
 
 # setting up flag_2 clue
@@ -87,22 +87,21 @@ sudo chown cyberrav /home/cyberrav/.Flag2.txt
 #cp /.data/ r00t.txt  /home/justin/
 sudo rm -rf /home/justin/get_the_flag
 sudo mkdir /home/justin/get_the_flag
-sudo cp /.data/$'\u2000r00t.txt\u2000' /home/justin/get_the_flag/
+# sudo cp /.data/$'\u2000r00t.txt\u2000' /home/justin/get_the_flag/
+# sudo chmod 400 /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
+# #sudo chmod 400 /home/justin
+# sudo chown justin /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
+# #sudo chown justin /home/justin
+sudo bash -c 'echo "THM{M45T3R_3V3RYTH1NG}" > /home/justin/get_the_flag/$(printf "\u2000r00t.txt\u2000")'
 sudo chmod 400 /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
-#sudo chmod 400 /home/justin
-sudo chown justin /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
-#sudo chown justin /home/justin
+sudo chown justin:justin /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
+sudo rm /home/justin/.bashrc
+sudo cp /.data/.bashrc /home/justin/.bashrc
+source /home/justin/.bashrc
 
 # removing existing service files
 sudo rm /etc/systemd/system/thm.service
 sudo rm /usr/lib/systemd/system/thm.service
-
-# updating firewall rules
-sudo apt-get install ufw
-sudo ufw allow 22/tcp
-sudo ufw allow 7888/tcp
-sudo ufw enable
-sudo ufw reload
 
 
 # setting python script as service
@@ -112,7 +111,19 @@ sudo systemctl daemon-reload
 sudo systemctl enable thm.service
 sudo systemctl start thm.service
 
+
+# updating firewall rules
+sudo apt-get install ufw
+sudo ufw default deny outgoing
+sudo ufw default deny incoming
 sudo ufw allow 22/tcp
 sudo ufw allow 7888/tcp
-sudo ufw enable
+sudo ufw --force enable
 sudo ufw reload
+
+
+# data dir unmounting
+sudo chmod 750 /.data
+
+
+# sudo umount -f /.data
