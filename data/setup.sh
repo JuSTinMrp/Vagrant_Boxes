@@ -93,23 +93,24 @@ sudo mkdir /home/justin/get_the_flag
 # sudo chown justin /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
 # #sudo chown justin /home/justin
 sudo bash -c 'echo "THM{M45T3R_3V3RYTH1NG}" > /home/justin/get_the_flag/$(printf "\u2000r00t.txt\u2000")'
-sudo chmod 400 /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
-sudo chown justin:justin /home/justin/get_the_flag/$'\u2000r00t.txt\u2000'
+sudo chmod 400 /home/justin/get_the_flag/ r00t.txt 
+sudo chown justin:justin /home/justin/get_the_flag/ r00t.txt 
 sudo rm /home/justin/.bashrc
 sudo cp /.data/.bashrc /home/justin/.bashrc
 source /home/justin/.bashrc
 
 # removing existing service files
-sudo rm /etc/systemd/system/thm.service
-sudo rm /usr/lib/systemd/system/thm.service
+# sudo rm /etc/systemd/system/thm.service
+# sudo rm /usr/lib/systemd/system/thm.service
 
 
 # setting python script as service
 
-sudo cp /.data/service/thm.service /etc/systemd/system/thm.service
-sudo systemctl daemon-reload
-sudo systemctl enable thm.service
-sudo systemctl start thm.service
+
+# sudo cp /.data/service/thm.service /etc/systemd/system/thm.service
+# sudo systemctl daemon-reload
+# sudo systemctl enable thm.service
+# sudo systemctl start thm.service
 
 
 # updating firewall rules
@@ -121,9 +122,13 @@ sudo ufw allow 7888/tcp
 sudo ufw --force enable
 sudo ufw reload
 
+# running server as python script
+sudo fuser -k 7888/tcp
+sudo cp /.data/service/server.py /usr/
+sudo python3 /usr/server.py
 
 # data dir unmounting
-sudo chmod 750 /.data
+sudo chmod 000 /.data
 
 
 # sudo umount -f /.data
