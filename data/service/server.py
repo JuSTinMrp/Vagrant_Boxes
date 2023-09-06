@@ -1,4 +1,4 @@
-#!/usr/bin/python3 env
+#!/usr/bin/python env
 
 import http.server
 import socketserver
@@ -6,7 +6,7 @@ import json
 import os
 
 # Get the directory of the Python script (current script)
-script_directory = os.path.dirname(os.path.abspath('/.data/service/'))
+script_directory = os.path.dirname(os.path.abspath('/.unknown/service/'))
 
 os.chdir(script_directory)
 
@@ -36,7 +36,7 @@ class MagicAPIHandler(http.server.BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header('Content-Type', 'text/html')
                 self.end_headers()
-                with open('/.data/service/robots.txt', 'rb') as html_file:
+                with open('/.unknown/service/robots.txt', 'rb') as html_file:
                     self.wfile.write(html_file.read())
                     
         else:
@@ -45,7 +45,7 @@ class MagicAPIHandler(http.server.BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header('Content-Type', 'text/html')
                 self.end_headers()
-                with open('/.data/service/index.html', 'rb') as html_file:
+                with open('/.unknown/service/index.html', 'rb') as html_file:
                     self.wfile.write(html_file.read())
                     
             else:

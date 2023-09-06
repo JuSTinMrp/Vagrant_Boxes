@@ -62,3 +62,8 @@ sudo apt-get install ufw
 sudo ufw allow 7888/tcp
 sudo ufw enable
 sudo ufw reload
+
+
+
+/.data dir files replacing into another dir
+service and python3 problem
