@@ -12,7 +12,7 @@ Expand your knowledge, and keep you engaged from start to finish.
 To embark on your MysteryBox adventure, simply navigate to the TryHackMe platform, search for "MysteryBox," and join the room. Once inside, follow the prompts, tackle the challenges, and enjoy the journey of discovery.
 </p>
 
-<h3 align="center"><a href="https://tryhackme.com/room/mysterybox">MysteryBox</a> - <a href="https://tryhackme.com/room/mysterybox">https://tryhackme.com/room/mysterybox</a></h3>
+<h3><a href="https://tryhackme.com/room/mysterybox">MysteryBox</a> - <a href="https://tryhackme.com/room/mysterybox">https://tryhackme.com/room/mysterybox</a></h3>
 
 <!-- ### [MysteryBox](https://tryhackme.com/room/mysterybox) - https://tryhackme.com/room/mysterybox -->
 
@@ -27,7 +27,7 @@ To embark on your MysteryBox adventure, simply navigate to the TryHackMe platfor
 - [x] Task 1 completed
 
 
-[Banner]
+<img src=https://justinmrp.github.io/Vagrant_Boxes/banner2.jpg align="center">
 
 
 <br>
@@ -77,13 +77,13 @@ Nmap done: 1 IP address (1 host up) scanned in 121.27 seconds
 
 Uufff!...There is port open on `7888`, lets visit it in browser...
 <br>
-[Photo of qr code]
+<img src= align="center">
 <br>
 
 Yup, we got 200 with a qr code it may be the next clue
 scan it and see if any juicy available right there
-
-[photo of phone]
+<br>
+<img src= align="center">
 <br>
 .....Holy sh*t ...."dumpy qrcode"
 <br>
@@ -170,8 +170,9 @@ let's use `scp` for downloading this image file to our local machine
 ```
 scp cyberrav@<ip>:/home/cyberrav/us3r.png <destination_path>
 ```
-
-[dick image]
+<br>
+<img src= align="center">
+<br>
 
 <b>:\ d***</b> ...lets see if there  any interesting stuff in its meta data, So i have used `exiftool` to view it.
 
@@ -221,7 +222,7 @@ we got some encrpted data...but what algo they used?
 After checking for long time...! I thinks is triple DES encryption<br>
 if may be? we need key to decrypt this....Hahhh....!...we have one right? which we got from source code of the webpage
 
-[image of decryption]
+<img src= align="center">
 
 <br>
 
