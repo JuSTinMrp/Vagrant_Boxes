@@ -7,14 +7,14 @@
 <p align="center">
 Welcome to the MysteryBox, a thrilling and thought-provoking TryHackMe room designed to test your cybersecurity skills, problem-solving abilities, and creativity. This engaging challenge offers an opportunity to delve into a world of mysteries, puzzles, and secrets, where you'll uncover hidden treasures of knowledge and expertise. 
 </p><br>
-Expand your knowledge, and keep you engaged from start to finish.
 <p align="center">
 To embark on your MysteryBox adventure, simply navigate to the TryHackMe platform, search for "MysteryBox," and join the room. Once inside, follow the prompts, tackle the challenges, and enjoy the journey of discovery.
 </p>
 
-<h3><a href="https://tryhackme.com/room/mysterybox">MysteryBox</a> - <a href="https://tryhackme.com/room/mysterybox">https://tryhackme.com/room/mysterybox</a></h3>
+<h3 align="center"><a href="https://tryhackme.com/room/mysterybox">MysteryBox</a> - <a href="https://tryhackme.com/room/mysterybox">https://tryhackme.com/room/mysterybox</a></h3>
 
 <!-- ### [MysteryBox](https://tryhackme.com/room/mysterybox) - https://tryhackme.com/room/mysterybox -->
+<p align="center">Expand your knowledge, and keep you engaged from start to finish.</p>
 
 <br>
 
@@ -27,7 +27,7 @@ To embark on your MysteryBox adventure, simply navigate to the TryHackMe platfor
 - [x] Task 1 completed
 
 
-<img src=https://justinmrp.github.io/Vagrant_Boxes/banner2.jpg align="center">
+<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/banner2_crop.jpg align="center">
 
 
 <br>
@@ -77,13 +77,13 @@ Nmap done: 1 IP address (1 host up) scanned in 121.27 seconds
 
 Uufff!...There is port open on `7888`, lets visit it in browser...
 <br>
-<img src= align="center">
+<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/qr_page.png align="center">
 <br>
 
 Yup, we got 200 with a qr code it may be the next clue
 scan it and see if any juicy available right there
 <br>
-<img src= align="center">
+<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/qr_scan.jpeg align="center">
 <br>
 .....Holy sh*t ...."dumpy qrcode"
 <br>
@@ -171,7 +171,7 @@ let's use `scp` for downloading this image file to our local machine
 scp cyberrav@<ip>:/home/cyberrav/us3r.png <destination_path>
 ```
 <br>
-<img src= align="center">
+<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/dick.png align="center">
 <br>
 
 <b>:\ d***</b> ...lets see if there  any interesting stuff in its meta data, So i have used `exiftool` to view it.
@@ -222,7 +222,7 @@ we got some encrpted data...but what algo they used?
 After checking for long time...! I thinks is triple DES encryption<br>
 if may be? we need key to decrypt this....Hahhh....!...we have one right? which we got from source code of the webpage
 
-<img src= align="center">
+<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/decrypt.png align="center">
 
 <br>
 
