@@ -27,7 +27,7 @@ To embark on your MysteryBox adventure, simply navigate to the TryHackMe platfor
 - [x] Task 1 completed
 
 
-<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/banner2_crop.jpg align="center">
+<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/thm.png align="center">
 
 
 <br>
