@@ -67,3 +67,7 @@ sudo ufw reload
 
 /.data dir files replacing into another dir
 service and python3 problem
+
+
+add banner and other screenshot images
+publish
