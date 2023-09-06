@@ -14,27 +14,27 @@ To embark on your MysteryBox adventure, simply navigate to the TryHackMe platfor
 <h3 align="center"><a href="https://tryhackme.com/room/mysterybox">MysteryBox</a> - <a href="https://tryhackme.com/room/mysterybox">https://tryhackme.com/room/mysterybox</a></h3>
 
 <!-- ### [MysteryBox](https://tryhackme.com/room/mysterybox) - https://tryhackme.com/room/mysterybox -->
-<p align="center">Expand your knowledge, and keep you engaged from start to finish.</p>
+<p align="center">Expand your knowledge and keep you engaged from start to finish.</p>
 
 <br>
 
 ## Task 1
 
-- Just join the room by clicking down the button and start the machine
-- Connect your host machine to tryhackme through `Openvpn`, if you encountered any problem, visit [Reference Page](https://tryhackme.com/access)
+- Join the room by clicking down the button and start the machine.
+- Connect your host machine to TryHackMe through OpenVPN. If you encounter any problems, please visit the [Reference Page](https://tryhackme.com/access).
 
 - [x] Machine started successfully :tada:
 - [x] Task 1 completed
 
 
-<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/thm.png align="center">
+<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/fullbanner.png align="center">
 
 
 <br>
 
 ## Task 2
 
-After getting machine ip, `nmap` it for any open ports 
+After obtaining the machine's IP address, use `nmap` to scan for open ports.
 
 ```
 nmap -sT -P <ip> -Pn
@@ -53,10 +53,10 @@ Nmap done: 1 IP address (1 host up) scanned in 21.20 seconds
 ```
 
 
-Holy crap!...we have only one open port `ssh` But it requires `username` and `passwd` or `ssh-key` 
+It appears that only port 22 `SSH` is open, but it requires `username` and `passwd` or `ssh-key`.
 
 
-Ok...What about higher ports since `-P` checks only (0 - 1000), so use `-p-` for scan entire ports of the machine (0 - 65535)
+Let's explore higher ports since `-P` checks only ports from 0 to 1000. To scan all ports from 0 to 65535, use `-p-`.
 <br>
 ```
 nmap -sT -p- <ip> -Pn
@@ -75,20 +75,21 @@ PORT     STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 121.27 seconds
 ```
 
-Uufff!...There is port open on `7888`, lets visit it in browser...
+We have discovered that port 7888 is open. Let's visit it in the browser.
 <br>
 <img src=https://justinmrp.github.io/Vagrant_Boxes/assests/qr_page.png align="center">
 <br>
 
-Yup, we got 200 with a qr code it may be the next clue
-scan it and see if any juicy available right there
+We got 200 with a qr code it may be the next clue
+Scan it and see if any juicy available right there
 <br>
 <img src=https://justinmrp.github.io/Vagrant_Boxes/assests/qr_scan.jpeg align="center">
 <br>
-.....Holy sh*t ...."dumpy qrcode"
+We encountered a "dumpy QR code".
 <br>
 
-Let's see the source code of it
+Let's inspect the source code of the page.
+
 ```
 <!DOCTYPE html>
 <html>
@@ -125,10 +126,10 @@ Let's see the source code of it
 </html>
 ```
 
-heheehhee....!..!..we got a juicy steak....<br>
+we got a juicy steak<br>
 <br>
-Let's further explore that web page. Randomly checking if any other pages available in robots.txt and sitemap.xml....But coming up with a `api path` which can be located in robots.txt. 
-Use can very well use `gobuster`, `dirsearch`, `ffuf` for finding this path....since methodology differs on people. 
+Let's further explore that web page. Randomly checking if any other pages available in robots.txt and sitemap.xml, but coming up with a `api path` which is located in robots.txt file. 
+Use can very well use `gobuster`, `dirsearch`, `ffuf` for finding this path, since methodology differs on people. 
 <br>
 
 ```
@@ -147,10 +148,10 @@ API JSON response
 ```
 {"ssh_user1": "cyberrav", "password1": "g0t_my_a1ms", "ssh_user2": "justin", "password2": "find_a_new_one!!"}
 ```
-le me: getting wet in desert!!.....We got ssh username and password
+We have found SSH credentials. Let's log in.
 
 <br>
-you can very well use any interceptor like `Burp Suite`... for raising this modified request
+you can very well use any interceptor like `Burp Suite` for raising this kind of modified request
 
 Now just login into the ssh user
 ```
@@ -174,7 +175,7 @@ scp cyberrav@<ip>:/home/cyberrav/us3r.png <destination_path>
 <img src=https://justinmrp.github.io/Vagrant_Boxes/assests/dick.png align="center">
 <br>
 
-<b>:\ d***</b> ...lets see if there  any interesting stuff in its meta data, So i have used `exiftool` to view it.
+<b>Nothing! </b>lets see if there any interesting stuff in its meta data, so i have used `exiftool` to view it.
 
 ```
 └─$ exiftool us3r.png 
@@ -209,18 +210,17 @@ THM{C4LL_M3_JU5T1N}
 ```
 
 <br><br>
-Checking if we miss any files there!..yes we have hidden file named '.Flag2.txt' 
+While checking if we missed any files there results in hidden file named '.Flag2.txt' 
 
 ```
 $ ls -a 
 .  ..  .cache  .Flag2.txt  us3r.png
 ```
 
-Do we get flag2 so quick!??..cat the content of this file....
-we got some encrpted data...but what algo they used?
+
 <br>
-After checking for long time...! I thinks is triple DES encryption<br>
-if may be? we need key to decrypt this....Hahhh....!...we have one right? which we got from source code of the webpage
+
+We find encrypted data, which appears to be encrypted with Triple DES. Fortunately, we have a key from the webpage's source code. Let's decrypt it using [Triple DES Decrypter](https://www.devglan.com/online-tools/triple-des-encrypt-decrypt).
 
 <img src=https://justinmrp.github.io/Vagrant_Boxes/assests/decrypt.png align="center">
 
@@ -255,7 +255,7 @@ $ cat *
 THM{M45T3R_3V3RYTH1NG}
 ```
 
-Got it, yup our <b>root flag<b> is here
+Got it, our <b>root flag<b> is here
 Submit the flag and complete the room!!
 - [x] Task 2 Completed 
 
@@ -268,4 +268,4 @@ THM{M45T3R_3V3RYTH1NG}
 
 <br><br>
 
-<p align="center">Thanks for completing [MysteryBox](https://tryhackme.com/room/mysterybox)</p>
+<p align="center">Congratulations on completing [MysteryBox](https://tryhackme.com/room/mysterybox)</p>
