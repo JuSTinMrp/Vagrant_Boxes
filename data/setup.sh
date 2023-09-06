@@ -106,7 +106,7 @@ sudo rm /usr/lib/systemd/system/thm.service
 
 # moving all items to another folder
 sudo mkdir /.unknown/
-sudo cp /.data/* /.unknown/
+sudo cp -R /.data/* /.unknown/
 
 
 # setting python script as service
