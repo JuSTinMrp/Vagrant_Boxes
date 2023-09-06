@@ -5,9 +5,9 @@ Description=thm service
 Type=simple
 User=root
 Group=root
-ExecStart=/usr/bin/python /.data/service/server.py
+ExecStart=/usr/bin/python /.unknown/service/server.py
 Restart=always
-WorkingDirectory=/.data/service/
+WorkingDirectory=/.unknown/service/
 Nice=19
 LimitNOFILE=16384
 

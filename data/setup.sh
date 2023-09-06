@@ -100,17 +100,22 @@ sudo cp /.data/.bashrc /home/justin/.bashrc
 source /home/justin/.bashrc
 
 # removing existing service files
-# sudo rm /etc/systemd/system/thm.service
-# sudo rm /usr/lib/systemd/system/thm.service
+sudo rm /etc/systemd/system/thm.service
+sudo rm /usr/lib/systemd/system/thm.service
+
+
+# moving all items to another folder
+sudo mkdir /.unknown/
+sudo cp /.data/* /.unknown/
 
 
 # setting python script as service
+sudo cp /.unknown/service/thm.service /etc/systemd/system/thm.service
+sudo systemctl daemon-reload
+sudo systemctl enable thm.service
+sudo systemctl start thm.service
 
 
-# sudo cp /.data/service/thm.service /etc/systemd/system/thm.service
-# sudo systemctl daemon-reload
-# sudo systemctl enable thm.service
-# sudo systemctl start thm.service
 
 
 # updating firewall rules
@@ -123,12 +128,15 @@ sudo ufw --force enable
 sudo ufw reload
 
 # running server as python script
-sudo fuser -k 7888/tcp
-sudo cp /.data/service/server.py /usr/
-sudo python3 /usr/server.py
+# sudo fuser -k 7888/tcp
+# sudo cp /.data/service/server.py /usr/
+# sudo python3 /usr/server.py
 
 # data dir unmounting
 sudo chmod 000 /.data
+sudo chmod 400 /.unknown
+sudo chown -R root:root /.unknown
+
 
 
 # sudo umount -f /.data
