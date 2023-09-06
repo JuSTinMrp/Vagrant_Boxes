@@ -12,7 +12,7 @@ Expand your knowledge, and keep you engaged from start to finish.
 To embark on your MysteryBox adventure, simply navigate to the TryHackMe platform, search for "MysteryBox," and join the room. Once inside, follow the prompts, tackle the challenges, and enjoy the journey of discovery.
 </p>
 
-<h3><a href="https://tryhackme.com/room/mysterybox">MysteryBox</a> - <a href="https://tryhackme.com/room/mysterybox">https://tryhackme.com/room/mysterybox</a></h3>
+<h3 align="center"><a href="https://tryhackme.com/room/mysterybox">MysteryBox</a> - <a href="https://tryhackme.com/room/mysterybox">https://tryhackme.com/room/mysterybox</a></h3>
 
 <!-- ### [MysteryBox](https://tryhackme.com/room/mysterybox) - https://tryhackme.com/room/mysterybox -->
 
