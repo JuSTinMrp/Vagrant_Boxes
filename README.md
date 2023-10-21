@@ -27,7 +27,7 @@ To embark on your MysteryBox adventure, simply navigate to the TryHackMe platfor
 - [x] Task 1 completed
 
 
-<div align="center"><img src=https://justinmrp.github.io/Vagrant_Boxes/assests/fullbanner.png style="height:50%;width:50%"></div>
+<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/fullbanner.png >
 
 
 <br>
@@ -77,13 +77,13 @@ Nmap done: 1 IP address (1 host up) scanned in 121.27 seconds
 
 We have discovered that port 7888 is open. Let's visit it in the browser.
 <br>
-<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/qr_page.png align="center">
+<div align="center"><img src="https://justinmrp.github.io/Vagrant_Boxes/assests/qr_page.png" style="height:50%;width:50%"></div>
 <br>
 
 We got 200 with a qr code it may be the next clue
 Scan it and see if any juicy available right there
 <br>
-<img src=https://justinmrp.github.io/Vagrant_Boxes/assests/qr_scan.jpeg align="center">
+<div align="center"><img src=https://justinmrp.github.io/Vagrant_Boxes/assests/qr_scan.jpeg" style="height:50%;width:50%"></div>
 <br>
 We encountered a "dumpy QR code".
 <br>
