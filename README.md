@@ -83,7 +83,7 @@ We have discovered that port 7888 is open. Let's visit it in the browser.
 We got 200 with a qr code it may be the next clue
 Scan it and see if any juicy available right there
 <br>
-<div align="center"><img src="https://justinmrp.github.io/Vagrant_Boxes/assests/qr_scan.jpeg" style="height:50%;width:50%"></div>
+<div align="center"><img src="https://justinmrp.github.io/Vagrant_Boxes/assests/qr_scan.jpeg" style="height:40%;width:40%"></div>
 <br>
 We encountered a "dumpy QR code".
 <br>
@@ -172,7 +172,7 @@ let's use `scp` for downloading this image file to our local machine
 scp cyberrav@<ip>:/home/cyberrav/us3r.png <destination_path>
 ```
 <br>
-<div align="center"><img src="https://justinmrp.github.io/Vagrant_Boxes/assests/dick.png" style="height:50%;width:50%"></div>
+<div align="center"><img src="https://justinmrp.github.io/Vagrant_Boxes/assests/dick.png" style="height:40%;width:40%"></div>
 <br>
 
 <b>Nothing! </b>lets see if there any interesting stuff in its meta data, so i have used `exiftool` to view it.
